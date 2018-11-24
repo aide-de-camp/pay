@@ -1,0 +1,32 @@
+button {
+  font-size: 14px;
+  border: 0;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25em;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(90%);
+}
+
+button:active {
+  filter: brightness(80%);
+}
+
+button,
+button:focus {
+  outline: none;
+}
+
+button:disabled {
+  color: #ffffff;
+  background-color: #cccccc !important;
+  cursor: not-allowed;
+}
+
+button:disabled:hover,
+button:disabled:active {
+  filter: none;
+}

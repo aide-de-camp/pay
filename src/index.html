@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
-
-</head>
-<body>
-
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+    <script src="/build/mycomponent.js"></script>
+  </head>
+  <body>
+    <!-- <div><adc-pay></adc-pay></div> -->
+    <div>
+      <adc-pay-card
+        button-text="Pay now!"
+        button-color="teal"
+        amount="10"
+        currency="eur"
+      >
+        ></adc-pay-card
+      >
+    </div>
+    <script>
+      const cardEl = (document.querySelector('adc-pay-card').acceptedCards = [
+        'mastercard',
+      ]);
+    </script>
+  </body>
 </html>
