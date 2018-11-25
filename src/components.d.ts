@@ -50,51 +50,15 @@ export namespace Components {
     'onPaymentSuccess'?: (event: CustomEvent) => void;
     'totalLabel'?: string;
   }
-
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
-  }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
-  }
-
-  interface AdcPay {}
-  interface AdcPayAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
   interface StencilElementInterfaces {
     'AdcPayCard': Components.AdcPayCard;
-    'MyComponent': Components.MyComponent;
-    'AdcPay': Components.AdcPay;
   }
 
   interface StencilIntrinsicElements {
     'adc-pay-card': Components.AdcPayCardAttributes;
-    'my-component': Components.MyComponentAttributes;
-    'adc-pay': Components.AdcPayAttributes;
   }
 
 
@@ -104,28 +68,12 @@ declare global {
     new (): HTMLAdcPayCardElement;
   };
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
-  };
-
-  interface HTMLAdcPayElement extends Components.AdcPay, HTMLStencilElement {}
-  var HTMLAdcPayElement: {
-    prototype: HTMLAdcPayElement;
-    new (): HTMLAdcPayElement;
-  };
-
   interface HTMLElementTagNameMap {
     'adc-pay-card': HTMLAdcPayCardElement
-    'my-component': HTMLMyComponentElement
-    'adc-pay': HTMLAdcPayElement
   }
 
   interface ElementTagNameMap {
     'adc-pay-card': HTMLAdcPayCardElement;
-    'my-component': HTMLMyComponentElement;
-    'adc-pay': HTMLAdcPayElement;
   }
 
 
