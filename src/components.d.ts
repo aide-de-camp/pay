@@ -13,7 +13,7 @@ import '@stencil/core';
 export namespace Components {
 
   interface AdcPayCard {
-    'acceptedCards': any;
+    'acceptedCards': string[];
     'amount': number;
     /**
     * The background color of the button. The foreground will always be white. This value can be any valid CSS color, passed as a string.
@@ -31,7 +31,7 @@ export namespace Components {
     'totalLabel': string;
   }
   interface AdcPayCardAttributes extends StencilHTMLAttributes {
-    'acceptedCards'?: any;
+    'acceptedCards'?: string[];
     'amount'?: number;
     /**
     * The background color of the button. The foreground will always be white. This value can be any valid CSS color, passed as a string.
@@ -46,6 +46,8 @@ export namespace Components {
     * Whether the button should be disabled or not.
     */
     'isDisabled'?: boolean;
+    'onPaymentError'?: (event: CustomEvent) => void;
+    'onPaymentSuccess'?: (event: CustomEvent) => void;
     'totalLabel'?: string;
   }
 

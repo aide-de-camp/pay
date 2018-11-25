@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop } from '@stencil/core';
 
 @Component({
   tag: 'adc-pay-card',
@@ -21,18 +21,20 @@ export class PayWithCard {
    */
   @Prop({ mutable: true }) isDisabled: boolean = false;
 
-  @Prop() acceptedCards;
+  @Prop() acceptedCards: string[];
 
   @Prop() totalLabel: string = 'Total to pay';
 
-  @Prop() amount: number;
+  @Prop() amount: number = 0;
 
   @Prop() currency: string = 'USD';
 
+  @Event() paymentSuccess: EventEmitter;
+  @Event() paymentError: EventEmitter;
+
   buttonEl!: HTMLButtonElement;
 
-  private async clickHandler(ev: MouseEvent) {
-    ev.preventDefault();
+  private async paymentHandler() {
     const paymentRequest = new PaymentRequest(
       [
         {
@@ -53,10 +55,17 @@ export class PayWithCard {
       }
     );
     try {
-      await paymentRequest.show();
+      const paymentDetails = await paymentRequest.show();
+      this.paymentSuccess.emit(paymentDetails);
+      paymentDetails.complete('success');
     } catch (e) {
-      throw e;
+      this.paymentError.emit(e);
     }
+  }
+
+  private async clickHandler(ev: MouseEvent) {
+    ev.preventDefault();
+    this.paymentHandler();
   }
 
   componentWillLoad() {

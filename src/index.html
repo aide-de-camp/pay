@@ -22,9 +22,16 @@
       >
     </div>
     <script>
-      const cardEl = (document.querySelector('adc-pay-card').acceptedCards = [
-        'mastercard',
-      ]);
+      const cardEl = document.querySelector('adc-pay-card');
+      cardEl.acceptedCards = ['mastercard', 'visa'];
+      cardEl.addEventListener('paymentSuccess', ev => {
+        console.log('payment success!');
+        console.log(ev);
+      });
+      cardEl.addEventListener('paymentError', ev => {
+        console.error('payment error!');
+        console.error(ev);
+      });
     </script>
   </body>
 </html>
