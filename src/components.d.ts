@@ -13,41 +13,71 @@ import '@stencil/core';
 export namespace Components {
 
   interface AdcPayCard {
+    /**
+    * An array of accepted card types. If omitted, all possible card types will be accepted. Possible values depend on the browser; Chrome currently accepts: amex, diners, discover, jcb, mastercard, unionpay, mir, and visa
+    */
     'acceptedCards': string[];
+    /**
+    * Total amount to pay. Defaults to 0.
+    */
     'amount': number;
     /**
-    * The background color of the button. The foreground will always be white. This value can be any valid CSS color, passed as a string.
+    * The background color of the button. The foreground will always be white. This value can be any valid CSS color, passed as a string. Defaults to "#999999".
     */
     'buttonColor': string;
     /**
-    * What the button will show as text inside it.
+    * What the button will show as text inside it. Defaults to "Pay with card".
     */
     'buttonLabel': string;
+    /**
+    * Currency for the total amount. Defaults to "USD".
+    */
     'currency': string;
     /**
-    * Whether the button should be disabled or not.
+    * Whether the button should be disabled or not. Defaults to false.
     */
     'isDisabled': boolean;
+    /**
+    * Label to show as description next to the amount to pay. Defaults to "Total to pay"
+    */
     'totalLabel': string;
   }
   interface AdcPayCardAttributes extends StencilHTMLAttributes {
+    /**
+    * An array of accepted card types. If omitted, all possible card types will be accepted. Possible values depend on the browser; Chrome currently accepts: amex, diners, discover, jcb, mastercard, unionpay, mir, and visa
+    */
     'acceptedCards'?: string[];
+    /**
+    * Total amount to pay. Defaults to 0.
+    */
     'amount'?: number;
     /**
-    * The background color of the button. The foreground will always be white. This value can be any valid CSS color, passed as a string.
+    * The background color of the button. The foreground will always be white. This value can be any valid CSS color, passed as a string. Defaults to "#999999".
     */
     'buttonColor'?: string;
     /**
-    * What the button will show as text inside it.
+    * What the button will show as text inside it. Defaults to "Pay with card".
     */
     'buttonLabel'?: string;
+    /**
+    * Currency for the total amount. Defaults to "USD".
+    */
     'currency'?: string;
     /**
-    * Whether the button should be disabled or not.
+    * Whether the button should be disabled or not. Defaults to false.
     */
     'isDisabled'?: boolean;
+    /**
+    * Emmited when the process is not completed, typically because of the user cancelling it.
+    */
     'onPaymentError'?: (event: CustomEvent) => void;
+    /**
+    * Emmited when the user correctly enters their payment details in the browser form.
+    */
     'onPaymentSuccess'?: (event: CustomEvent) => void;
+    /**
+    * Label to show as description next to the amount to pay. Defaults to "Total to pay"
+    */
     'totalLabel'?: string;
   }
 }
