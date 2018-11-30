@@ -5,7 +5,7 @@
 ![](https://img.shields.io/travis/com/aide-de-camp/pay/master.svg?style=flat-square)
 ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@adc/pay.svg?style=flat-square)
 ![npm](https://img.shields.io/npm/dm/@adc/pay.svg?style=flat-square)
-![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)
+![GitHub](https://img.shields.io/github/license/adc/pay.svg?style=flat-square)
 
 This is a collection of standalone Web Components that wrap the Web Payments API and make it easy to use. You can use the components inside any modern JS framework or with no framework at all.
 
