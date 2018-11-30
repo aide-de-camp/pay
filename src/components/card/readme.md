@@ -43,6 +43,7 @@ TBA.
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property        | Attribute      | Description                                                                                                                                                                                                              | Type       |
@@ -55,6 +56,7 @@ TBA.
 | `isDisabled`    | `is-disabled`  | Whether the button should be disabled or not. Defaults to false.                                                                                                                                                         | `boolean`  |
 | `totalLabel`    | `total-label`  | Label to show as description next to the amount to pay. Defaults to "Total to pay"                                                                                                                                       | `string`   |
 
+
 ## Events
 
 | Event            | Detail | Description                                                                             |
@@ -62,6 +64,7 @@ TBA.
 | `paymentError`   |        | Emmited when the process is not completed, typically because of the user cancelling it. |
 | `paymentSuccess` |        | Emmited when the user correctly enters their payment details in the browser form.       |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
