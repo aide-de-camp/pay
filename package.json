@@ -2,6 +2,16 @@
   "name": "@adc/pay",
   "version": "0.0.0-development",
   "description": "A web component to handle payments in the browser",
+  "keywords": [
+    "stencil",
+    "stencil-components",
+    "jsx",
+    "html",
+    "web-components",
+    "web-payment",
+    "web-payments",
+    "pay"
+  ],
   "publishConfig": {
     "access": "public"
   },
